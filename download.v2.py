@@ -19,6 +19,7 @@ haySiguiente = True;
 siguiente = ""
 pagina = 1;
 imagenes = list()
+print urlBase
 while(haySiguiente):
 	response = requests.get(urlBase + siguiente)
 	io = StringIO(response.content)
@@ -29,7 +30,7 @@ while(haySiguiente):
 	print("Cargando página " + str(pagina) + "\n")
 	for item in jsonResponse["items"]:
 		siguiente = "?max_id=" + item["id"]
-		imagenes.append(item["images"]["standard_resolution"]["url"])
+		imagenes.append(item["images"]["standard_resolution"]["url"].replace("/s640x640/sh0.08", ""))
 	haySiguiente = jsonResponse["more_available"]
 	pagina += 1
 if not os.path.exists("./fotos/" + user + "/"):
