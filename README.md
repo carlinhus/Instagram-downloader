@@ -4,6 +4,12 @@ Instagram downloader permite hacer una copia de seguridad de las fotos de cualqu
 ## Requisitos 
 Requiere tener instalado Python 2.7
 
+### Dependencias de Python
+- Pillow
+```console
+pip install Pillow
+```
+
 # Ejemplo de uso
 Escribir lo siguiente en la consola:
 ```console
